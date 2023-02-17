@@ -48,13 +48,47 @@ siscowet[541,"wgt"] <- 1580
 
 #Expository figure 
 
+#par(mfrow=c(2,2))
 plot(
   x=siscowet[siscowet$locID == "Deer Park", "len"],
-  y=siscowet[siscowet$locID == "Deer Park", "wgt"]
+  y=siscowet[siscowet$locID == "Deer Park", "wgt"],
+  main = "Length vs Weight",
+  xlab = "Length",
+  ylab = "Weight",
+  pch = 20,
+  cex = 0.75,
+  col = "darkslategray"
 )
-abline(a=mean(siscowet[siscowet$locID == "Deer Park", "wgt"],
-              na.rm=TRUE), b=0)
-text(x = 300, y = 2000, 
-     floor(mean(siscowet[siscowet$locID == "Deer Park", "wgt"])))
+points(
+  x=siscowet[siscowet$locID == "Blind Sucker", "len"],
+  y=siscowet[siscowet$locID == "Blind Sucker", "wgt"],
+  pch = 19,
+  cex = 0.75,
+  col = "darkslategray3"
+)
+points(
+  x=siscowet[siscowet$locID == "Grand Marais", "len"],
+  y=siscowet[siscowet$locID == "Grand Marais", "wgt"],
+  pch = 19,
+  cex = 0.75,
+  col = "orange"
+)
+points(
+  x=siscowet[siscowet$locID == "Little Lake Harbor", "len"],
+  y=siscowet[siscowet$locID == "Little Lake Harbor", "wgt"],
+  pch = 19,
+  cex = 0.75,
+  col = "lightgoldenrod"
+)
+legend(
+  x = "topleft",
+  legend = c("Deer Park", "Blind Sucker", "Grand Marais", "Little Lake Harbor"),
+  pch = c(19, 19, 19, 19),
+  col = c("darkslategray","darkslategray3","orange","lightgoldenrod")
+)
+
+?pdf
+
+
 
 
