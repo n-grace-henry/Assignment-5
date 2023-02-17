@@ -48,7 +48,6 @@ siscowet[541,"wgt"] <- 1580
 
 #Expository figure 
 
-#par(mfrow=c(2,2))
 plot(
   x=siscowet[siscowet$locID == "Deer Park", "len"],
   y=siscowet[siscowet$locID == "Deer Park", "wgt"],
